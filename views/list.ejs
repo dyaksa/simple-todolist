@@ -3,13 +3,15 @@
     <h1><%= listTitle %></h1>
 </div>
 <div class="box">
-    <% for(let i = 0; i < lists.length; i++){ %>
-    <div class="list">
-        <input type="checkbox">
-        <p><%= lists[i] %></p>
-    </div>
-    <hr>
-    <% } %>
+    <% lists.forEach(function(list){ %>
+    <form action="/delete" method="POST">
+        <div class="list">
+            <input type="checkbox">
+            <p><%= list.name %></p>
+        </div>
+        <hr>
+    </form>
+    <% }) %>
     <form method="POST" action="/">
         <input type="text" name="list" placeholder="New Item">
         <button type="submit" name="submit" value="<%= listTitle %>"><span>+</span></button>
