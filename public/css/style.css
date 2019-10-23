@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700,800&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: #E4E9FD;
+    font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    background-image: -webkit-linear-gradient(65deg, #A683E3 50%, #E4E9FD 50%);
+    height: 100%;
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+    color: white;
+    font-weight: 800;
+}
+
+#heading {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.heading {
+    background-color: #A683E3;
+    width: 350px;
+    margin: 0 auto;
+    padding: 0.5rem;
+    border-radius: 5px;
+
+}
+
+.box {
+    margin: 50px auto;
+    width: 350px;
+    background-color: white;
+    border-radius: 7px;
+    -webkit-box-shadow: 20px 21px 53px -34px rgba(0, 0, 0, 0.44);
+    -moz-box-shadow: 20px 21px 53px -34px rgba(0, 0, 0, 0.44);
+    box-shadow: 20px 21px 53px -34px rgba(0, 0, 0, 0.44);
+}
+
+p {
+    display: inline-block;
+    color: black;
+    font-weight: 400;
+}
+
+input[type="checkbox"] {
+    display: inline-block;
+    margin-right: 15px;
+    border: none
+}
+
+input[type="checkbox"]:checked+p {
+    text-decoration: line-through;
+    text-decoration-color: #A683E3;
+}
+
+input[type="text"] {
+    padding: 5% 16%;
+    border: none;
+    text-align: center;
+}
+
+div.list {
+    padding: 5% 7%;
+}
+
+hr {
+    border: 0.05rem solid #F1F1F1;
+}
+
+button[type="submit"] {
+    background-color: #A683E3;
+    border: none;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+button span {
+    vertical-align: middle;
+    font-size: 1.5rem;
+}
+
+
+/*
+#A683E3
+#E4E9FD
+#F1F1F1
+#00204a
+*/
