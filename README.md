@@ -7,7 +7,7 @@ Foobar is a Python library for dealing with word pluralization.
 Use the package manager [git](https://github.com/dyaksa/simple-todolist.git) to install todolist.
 
 ```bash
-pip install foobar
+git clone https://github.com/dyaksa/simple-todolist.git
 ```
 
 ## Usage
