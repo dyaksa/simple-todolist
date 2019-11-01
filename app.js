@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({
 app.use(express.static("public"));
 moment.locale("id");
 
-mongoose.connect("mongodb://localhost:27017/todolistDB", {
+mongoose.connect("mongodb+srv://admin_dyaksa:tuesblues_030195@cluster0-pnlxn.mongodb.net/todolistDB", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false
@@ -92,19 +92,32 @@ app.post("/", function (req, res) {
 app.post("/delete", function (req, res) {
     const id = req.body.checkbox;
     const day = moment().format("dddd, DD MMMM");
-    const today = req.body.titleName;
-    if (day === today) {
+    const titleName = req.body.titleName;
+    if (day === titleName) {
         Items.findByIdAndRemove(id, function (err) {
             if (err) throw err;
             console.log("success delete");
             res.redirect("/");
         });
+    } else {
+        Lists.findOneAndUpdate({
+            name: titleName
+        }, {
+            $pull: {
+                items: {
+                    _id: id
+                }
+            }
+        }, function (err, result) {
+            if (err) throw err;
+            console.log("success update");
+            res.redirect("/" + titleName);
+        });
     }
-
 });
 
 app.get("/:customList", function (req, res) {
-    const customList = _.toLower(req.params.customList);
+    const customList = _.lowerCase(req.params.customList);
     Lists.findOne({
         name: customList
     }, function (err, list) {
