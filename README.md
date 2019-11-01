@@ -1,6 +1,6 @@
-# Foobar
+# Todolist Simple Web
 
-Foobar is a Python library for dealing with word pluralization.
+todolist web app is simple web app application todolist
 
 ## Installation
 
